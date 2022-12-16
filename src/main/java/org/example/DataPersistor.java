@@ -16,24 +16,24 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 
 public class DataPersistor {
-  private static CanbanBoard canbanBoard = new CanbanBoard();
+  private static CanbanBoardData canbanBoardData = new CanbanBoardData();
   private static Logger log = Logger.getLogger("log");
   
   
     /**
      * Load the data of CanbanBoard from a .yaml into the canbanBoard
      * @param path
-     * @param canbanBoard
+     * @param canbanBoardData
      * @return
      */
-  private static CanbanBoard loadCanbanBoardData(String path){
+  private static CanbanBoardData loadCanbanBoardData(String path){
     //load yml config
     Yaml yamlFile = new Yaml();
     try{
       InputStream in = Files.newInputStream(Paths.get(path));
-      canbanBoard = yamlFile.loadAs(in, CanbanBoard.class);
+      canbanBoardData = yamlFile.loadAs(in, CanbanBoardData.class);
 
-      return canbanBoard;
+      return canbanBoardData;
     }
     catch (IOException e){
       log.log(Level.WARNING, "File '"+path+"' not found.");
@@ -47,10 +47,10 @@ public class DataPersistor {
    * @param canbanBoard
    * @return
    */
-  public static CanbanBoard saveCanbanBoardData(String path, CanbanBoard canbanBoard){
+  public static CanbanBoardData saveCanbanBoardData(String path, CanbanBoardData canbanBoardData){
     ObjectMapper om = new ObjectMapper(new YAMLFactory());
     try {
-      om.writeValue(new File(path), canbanBoard);
+      om.writeValue(new File(path), canbanBoardData);
     } catch (JsonGenerationException e) {
       log.log(Level.WARNING, e.getMessage());
       e.printStackTrace();
@@ -61,6 +61,6 @@ public class DataPersistor {
       log.log(Level.WARNING, e.getMessage());
       e.printStackTrace();
     }
-    return canbanBoard;
+    return canbanBoardData;
   }
 }
