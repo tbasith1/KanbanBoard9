@@ -25,8 +25,8 @@ public class CanbanCard {
     }
 
 
-    public CanbanCard(UUID uuid, int numberInOrder, CanbanCardStatus status, String title, String description, Date lastEditedDate) {
-        this.uuid = uuid;
+    public CanbanCard(int numberInOrder, CanbanCardStatus status, String title, String description, Date lastEditedDate) {
+        this.uuid = UUID.randomUUID();
         this.numberInOrder = numberInOrder;
         this.status = status;
         this.title = title;
