@@ -13,6 +13,7 @@ import org.yaml.snakeyaml.Yaml;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 
 public class DataPersistor {
@@ -26,7 +27,7 @@ public class DataPersistor {
      * @param canbanBoardData
      * @return
      */
-  private static CanbanBoardData loadCanbanBoardData(String path){
+  public static CanbanBoardData loadCanbanBoardData(String path){
     //load yml config
     Yaml yamlFile = new Yaml();
     try{
@@ -49,6 +50,9 @@ public class DataPersistor {
    */
   public static CanbanBoardData saveCanbanBoardData(String path, CanbanBoardData canbanBoardData){
     ObjectMapper om = new ObjectMapper(new YAMLFactory());
+    om.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
+
+    
     try {
       om.writeValue(new File(path), canbanBoardData);
     } catch (JsonGenerationException e) {

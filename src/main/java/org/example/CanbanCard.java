@@ -10,35 +10,45 @@ enum CanbanCardStatus {
 }
 
 public class CanbanCard {
-    private UUID uuid;
+    private String uuid;
     private int numberInOrder;
 
     private CanbanCardStatus status;
 
     private String title;
     private String description;
-    private Date lastEditedDate;
+    // private Date lastEditedDate;
 
 
     private void addCardToRelease(CanbanRelease canbanRelease) {
 
     }
 
+    public CanbanCard(){}
 
-    public CanbanCard(int numberInOrder, CanbanCardStatus status, String title, String description, Date lastEditedDate) {
-        this.uuid = UUID.randomUUID();
+
+    public CanbanCard(String uuid, int numberInOrder, CanbanCardStatus status, String title, String description, Date lastEditedDate) {
+        this.uuid = uuid;
         this.numberInOrder = numberInOrder;
         this.status = status;
         this.title = title;
         this.description = description;
-        this.lastEditedDate = lastEditedDate;
+        // this.lastEditedDate = lastEditedDate;
+    }
+    public CanbanCard(int numberInOrder, CanbanCardStatus status, String title, String description, Date lastEditedDate) {
+        this.uuid = UUID.randomUUID().toString();
+        this.numberInOrder = numberInOrder;
+        this.status = status;
+        this.title = title;
+        this.description = description;
+        // this.lastEditedDate = lastEditedDate;
     }
 
-    public UUID getUuid() {
+    public String getUuid() {
         return uuid;
     }
 
-    public void setUuid(UUID uuid) {
+    public void setUuid(String uuid) {
         this.uuid = uuid;
     }
 
@@ -74,12 +84,12 @@ public class CanbanCard {
         this.description = description;
     }
 
-    public Date getLastEditedDate() {
-        return lastEditedDate;
-    }
+    // public Date getLastEditedDate() {
+    //     return lastEditedDate;
+    // }
 
-    public void setLastEditedDate(Date lastEditedDate) {
-        this.lastEditedDate = lastEditedDate;
-    }
+    // public void setLastEditedDate(Date lastEditedDate) {
+    //     this.lastEditedDate = lastEditedDate;
+    // }
 }
 
