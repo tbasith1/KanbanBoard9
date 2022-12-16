@@ -4,5 +4,9 @@ import java.util.List;
 
 public class CanbanRelease {
     String releaseNumber;
-    private List<CanbanCard> canbanCards;
+    public List<CanbanCard> canbanCards;
+
+    public CanbanRelease(String releaseName) {
+        this.releaseNumber = releaseName;
+    }
 }
