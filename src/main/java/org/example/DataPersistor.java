@@ -18,9 +18,6 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 public class DataPersistor {
   private static CanbanBoard canbanBoard = new CanbanBoard();
   private static Logger log = Logger.getLogger("log");
-
-
-  
   
   
     /**
