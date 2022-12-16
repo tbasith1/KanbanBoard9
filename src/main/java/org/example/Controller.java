@@ -31,7 +31,7 @@ public class Controller {
             if (command.contains("/list card")) {
 
                 if (command.contains("/list card forlasthour")) {
-                    canbanBoardData.listCardForLastHour();
+//                    canbanBoardData.listCardForLastHour();
                 }
                 if (command.contains("/list card todo")) {
                     System.out.println(canbanBoardData.getCardsTodo());
