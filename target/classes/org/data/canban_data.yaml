@@ -1,21 +1,21 @@
 ---
 canbanCard:
-- uuid: "b116d610-a974-49ce-a4b0-0f107743a704"
+- uuid: "8891e8b1-c304-4abe-9d9c-030cf31074d2"
   numberInOrder: 1
   status: "TODO"
   title: "Test card 1"
   description: "This is the testcard one"
-- uuid: "4f1a11fd-8b6a-4d0f-aaa6-c68fa3208197"
+- uuid: "7b81b146-c20f-4222-9a76-d17756e91eab"
   numberInOrder: 2
   status: "TODO"
   title: "Test card 2"
   description: "This is the testcard two"
-- uuid: "f16ca503-f118-4aa9-a9dc-2288376b488a"
+- uuid: "7fcc8048-5cd7-444c-91fe-98f934416c48"
   numberInOrder: 3
   status: "PROCESSING"
   title: "Test card 3"
   description: "This is the testcard three"
-- uuid: "90873f69-1225-47bc-bcb7-75be60797149"
+- uuid: "50694bd8-72cf-420c-a339-990639af72eb"
   numberInOrder: 4
   status: "TODO"
   title: "Test card 4"

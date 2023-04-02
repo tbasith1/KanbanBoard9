@@ -30,9 +30,9 @@ public class Main {
       System.out.println("|                                                                                                     |");
       
       cbd.getCanbanCard().forEach(c -> {
-        System.out.println("|  |------------------------------|                                                                 |");
-        System.out.println("|  |             "+c.getTitle()+"                 |                                                                 |");
-        System.out.println("|  |------------------------------|                                                                 |");
+        System.out.println("|  |------------------------------|                                                                   |");
+        System.out.println("|  |             "+c.getTitle()+"      |                                                                 |");
+        System.out.println("|  |------------------------------|                                                                   |");
         
       });
 
